@@ -1,8 +1,8 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
-from .models import Member
-from .serializers import MemberSerializer
+from rest_framework import status, generics
+from .models import Member, Categoria
+from .serializers import MemberSerializer, CategoriaSerializer
 from django.shortcuts import get_object_or_404
 
 class MemberList(APIView):
@@ -36,3 +36,13 @@ class MemberDetail(APIView):
         member = get_object_or_404(Member, pk=pk)
         member.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+# Novas views para Categoria
+
+class CategoriaListCreate(generics.ListCreateAPIView):
+    queryset = Categoria.objects.all()
+    serializer_class = CategoriaSerializer
+
+class CategoriaDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Categoria.objects.all()
+    serializer_class = CategoriaSerializer
