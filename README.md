@@ -16,10 +16,10 @@ com integração a API Django REST Framework e toggle de Dark Mode.
 ## INSTALAÇÃO
 
 1. Clone o repositório:
-git clone [URL_DO_REPOSITORIO]
+git clone https://github.com/MiguelSerea/cadastrocliente-DJANGO-REACT.git
 
 2. Acesse a pasta do projeto:
-cd nome-da-pasta-do-projeto
+cd frontend
 
 3. Instale as dependências frontend:
 npm install
